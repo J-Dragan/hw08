@@ -30,7 +30,7 @@ class fractionType{
 
 		//cin/cout
 		friend std::ostream& operator <<(std::ostream& os, const fractionType& fraction);
-		friend std::istream& operator >>(std::istream& is, const fractionType& fraction);
+		friend std::istream& operator >>(std::istream& is, fractionType& fraction);
 
 
 

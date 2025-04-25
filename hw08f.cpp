@@ -47,24 +47,21 @@ fractionType fractionType::operator /(const fractionType& other) const{
 }
 
 //cin/cout
-std::ostream& operator <<(std::ostream& os, fractionType& fraction){
+std::ostream& operator <<(std::ostream& os, const fractionType& fraction){
 	os << fraction.numerator << "/" << fraction.denominator;
+	return os;
 }
+
 std::istream& operator >>(std::istream& is, fractionType& fraction){
-	char slash
+	char slash;
 	is >> fraction.numerator >> slash >> fraction.denominator;
+	
+	if(slash != '/'){
+		throw std::invalid_argument("invalid, no slash");	
+	}
+	if(fraction.denominator == 0){
+		throw std::invalid_argument("No zero in denominator");
+	}
+	return is;
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
