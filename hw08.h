@@ -1,11 +1,11 @@
 #ifndef hw08_H
 #define hw08_H
-
+#include <iostream>
 
 class fractionType{
 	private:
 		int numerator;
-		int demominater;
+		int denominator;
 
 
 
@@ -29,11 +29,13 @@ class fractionType{
 		fractionType operator /(const fractionType& other) const;
 
 		//cin/cout
-		friend std::ostream& operator <<(std::ostream os, const fractionType& fraction);
-		friend std::istream& operator >>(std::istream is, const fractionType& fraction);
+		friend std::ostream& operator <<(std::ostream& os, const fractionType& fraction);
+		friend std::istream& operator >>(std::istream& is, const fractionType& fraction);
 
 
 
 
 
-}
+};
+
+#endif
